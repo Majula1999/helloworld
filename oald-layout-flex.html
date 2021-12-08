@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-size: 30px;
+    }
+    body {
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    .nomalBox {
+      width: 200px;
+      height: 100vh;
+      background-color: aqua;
+      border: 3px solid black;
+    }
+    .txtBox {
+      width: 0;
+      flex-grow: 1;
+      background-color: brown;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .txtBox div {
+      width: 100%;
+      height: 50%;
+      border: 3px solid black;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="nomalBox">nomalBox</div>
+  <div class="txtBox">
+    <div>topBox</div>
+    <div>bottomBox</div>
+  </div>
+  <div class="nomalBox">nomalBox</div>
+  <div class="nomalBox">nomalBox</div>
+</body>
+</html>

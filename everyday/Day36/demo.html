@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div.redBox {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+
+    div.greenBox {
+      width: 100px;
+      height: 100px;
+      background-color: green;
+    }
+
+    .flexBox {
+      display: flex;
+    }
+    .redButton:hover {
+      background-color: red;
+    }
+    .greenButton:hover {
+      background-color:green;
+    }
+    .redButton:hover + .div.redBox {
+      background-color: green;
+    }
+    .greenButton:hover + .div.greenBox {
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="flexBox">
+    <button class="redButton">red</button>
+    <button class="greenButton">green</button>
+  </div>
+</body>
+
+</html>

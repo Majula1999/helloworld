@@ -1,0 +1,3 @@
+1.解决高度塌陷，父级div宽高为0加border，子级div浮动时，会发生父级div的高度塌陷，解决方法给父级加overflow：hidden。
+2.两个元素加不同的bfc，防止外边距合并。
+3.浮动元素会覆盖非浮动元素，给非浮动加overflow：hidden，浮动和bfc不重叠。

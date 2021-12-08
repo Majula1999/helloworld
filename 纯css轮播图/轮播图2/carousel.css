@@ -1,0 +1,54 @@
+* {
+  background-color: rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0 0 1px red;
+}
+
+.slider {
+  width: 600px;
+  height: 400px;
+}
+
+input {
+  display: none;
+}
+
+input:nth-child(1):checked ~ .slides .slide:nth-child(1) {
+display: block;
+}
+
+.slides {
+  height: 100%;
+  position: relative;
+}
+
+.slide {
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+label {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 70px;
+}
+
+label:first-child {
+  left: 0;
+}
+
+label:nth-child(2) {
+  right: 0;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
+
+input:first-child:checked ~ .indicators label:first-child {
+  background-color: red;
+}

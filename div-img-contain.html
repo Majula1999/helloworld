@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>div-img-contain</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      box-sizing: border-box;
+    }
+
+    .fatherBox {
+      width: 30%;
+      height: 100vh;
+      margin: 0 auto;
+      background-color: aliceblue;
+    }
+
+    /* 图片和文字都可以用text-align: center水平居中 */
+    .sonBox1 {
+      width: 100%;
+      height: 33.3%;
+      border: 1px solid black;
+      text-align: center;
+    }
+
+    .img1 {
+      height: 100%;
+    }
+    /* 先向右下移动父元素宽高百分之五十，在往回移动子元素百分之五十 */
+    .sonBox2 {
+      width: 100%;
+      height: 33.3%;
+      border: 1px solid black;
+
+    }
+
+    .img2 {
+      /* width: calc(0.3 * 100vw); */
+      width: 30%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%)
+    }
+
+
+    /* 子绝父相 */
+    .sonBox3 {
+      width: 100%;
+      height: 33.4%;
+      border: 1px solid black;
+      position: relative;
+    }
+
+    .img3 {
+      width: 50%;
+      height: 50%;
+      position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="fatherBox">
+    <div class="sonBox1">
+      <img src="./img/CPC!important.jpg" class="img1" alt="">
+    </div>
+    <div class="sonBox2">
+      <img src="./img/waitNoMeaning.jpg" class="img2" alt="">
+    </div>
+    <div class="sonBox3">
+      <img src="./img/honour.jpeg" class="img3" alt="">
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <style>
+    html {
+      zoom: 2;
+    }
+
+    .slider {
+      width: 300px;
+      height: 200px;
+      position: relative;
+    }
+
+    .slider input {
+      display: none;
+    }
+
+    .slider input :nth-child(1):checked~.slides .slide:nth-child(1) img,
+    :nth-child(2):checked~.slides .slide:nth-child(2) img,
+    :nth-child(3):checked~.slides .slide:nth-child(3) img,
+    :nth-child(4):checked~.slides .slide:nth-child(4) img {
+      opacity: 1;
+    }
+
+    .slider input :nth-child(1):checked~.slides .slide:nth-child(1) label,
+    :nth-child(2):checked~.slides .slide:nth-child(2) label,
+    :nth-child(3):checked~.slides .slide:nth-child(3) label,
+    :nth-child(4):checked~.slides .slide:nth-child(4) label {
+      z-index: 9;
+      display: block;
+    }
+
+    .slider input:nth-child(1):checked~.indicators label:nth-child(1),
+    :nth-child(2):checked~.indicators label:nth-child(2),
+    :nth-child(3):checked~.indicators label:nth-child(3),
+    :nth-child(4):checked~.indicators label:nth-child(4) {
+      background-color: white;
+    }
+
+    .slider .slides {
+      height: 100%;
+      position: relative;
+    }
+
+    .slider .slides .slide {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+    }
+
+    .slider .slides .slide label {
+      cursor: pointer;
+      display: none;
+      position: absolute;
+      line-height: 70px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      height: 70px;
+    }
+
+    .slider .slides .slide label:hover {
+      background-color: red;
+    }
+
+    .slider .slides .slide label:first-child {
+      left: 0;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .slider .slides .slide label:nth-child(2) {
+      right: 0;
+      border-radius: 5px 0 0 5px;
+    }
+
+    .slider .slides .slide img {
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: 1s;
+    }
+
+    .indicators {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+
+    .indicators label {
+      float: left;
+      margin: 3px;
+      width: 5px;
+      height: 5px;
+      border: 2px solid;
+      display: inline-block;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .indicators label:hover {
+      background-color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slider">
+    <input type="radio" name="slider1" id="i1">
+    <input type="radio" name="slider1" id="i2">
+    <input type="radio" name="slider1" id="i3">
+    <input type="radio" name="slider1" id="i4">
+    <div class="slides">
+      <div class="slide">
+        <label for="i4">prev</label>
+        <label for="i2">next</label>
+        <img
+          src="http://t1-q.mafengwo.net/s17/M00/97/78/CoUBXmGaKsOAFYZzABeJ-G2DhIc340.jpg?imageMogr2%2Fthumbnail%2F%21440x300r%2Fstrip%2Fgravity%2FCenter%2Fcrop%2F%21440x300%2Fquality%2F90.jpg"
+          alt="">
+      </div>
+      <div class="slide">
+        <label for="i1">prev</label>
+        <label for="i3">next</label>
+        <img
+          src="https://travel.12306.cn/imgs/resources/uploadfiles/images/8b36f9a7-f780-4e71-b719-9300109a9ff2_product_W572_H370.jpg"
+          alt="">
+      </div>
+      <div class="slide">
+        <label for="i2">prev</label>
+        <label for="i4">next</label>
+        <img
+          src="https://travel.12306.cn/imgs/resources/uploadfiles/images/b0c76b21-531b-4af4-a607-cf5672c72ded_product_W572_H370.jpg"
+          alt="">
+      </div>
+      <div class="slide">
+        <label for="i3">prev</label>
+        <label for="i1">next</label>
+        <img
+          src="https://travel.12306.cn/imgs/resources/uploadfiles/images/6d77d0ea-53d0-4518-b7e9-e53795b4920c_product_W572_H370.jpg"
+          alt="">
+      </div>
+    </div>
+    <div class="indicators">
+      <label for="i1"></label>
+      <label for="i2"></label>
+      <label for="i3"></label>
+      <label for="i4"></label>
+    </div>
+  </div>
+</body>
+
+</html>

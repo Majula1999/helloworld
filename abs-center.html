@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .fatherBox {
+      width: 300px;
+      height: 300px;
+      background-color: red;
+      margin: 10px;
+    }
+
+    .sonBox {
+      width: 100px;
+      height: 100px;
+      background-color: green;
+    }
+
+    .fatherBox1 {
+      position: relative;
+    }
+    .sonBox1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -50px;
+      margin-left: -50px;
+    }
+
+    .fatherBox2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .fatherBox3 {
+      position: relative;
+    }
+
+    .sonBox3 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .fatherBox4 {
+      position: relative;
+    }
+    .sonBox4 {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    .fatherBox5 {
+      text-align: center;
+      line-height: 300px;
+      font-size: 50px;
+      color: green;
+      background-color: red;
+    }
+
+    .fatherBox6 {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .sonBox6 {
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>子绝父相定位</h1>
+  <div class="fatherBox fatherBox1">
+    <div class="sonBox sonBox1"></div>
+  </div>
+
+  <h1>flex天下第一</h1>
+  <div class="fatherBox fatherBox2">
+    <div class="sonBox sonBox2"></div>
+  </div>
+
+  <h1>transform右下移动父元素一半减子元素一半</h1>
+  <div class="fatherBox fatherBox3">
+    <div class="sonBox sonBox3"></div>
+  </div>
+
+  <h1>子绝父相margin:auto</h1>
+  <div class="fatherBox fatherBox4">
+    <div class="sonBox sonBox4"></div>
+  </div>
+
+  <h1>line-height = height,图片文字</h1>
+  <div class="fatherBox fatherBox5">
+    aaa
+  </div>
+
+  <h1>父元素table-cell,vertical-align: middle.+子元素margin：0 auto.</h1>
+  <div class="fatherBox fatherBox6">
+    <div class="sonBox sonBox6"></div>
+  </div>
+
+</body>
+
+</html>
