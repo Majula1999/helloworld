@@ -29,16 +29,16 @@
        width: 400px;
        grid-template-columns: repeat(4, 1fr);
        grid-template-rows: repeat(4, 1fr);
-       grid-template-areas:  'a b c d' 'a b c d' 'a b c d' 'a b c d';
+       grid-template-areas:  'a a c d' 'b a c d' 'b a a d' 'b b a d';
      }
 
      div.gridItem2:nth-child(1) {
       grid-area: a;
      }
 
-     div.gridItem2:nth-child(2) {
+     /* div.gridItem2:nth-child(2) {
        grid-area: c;
-     }
+     } */
   </style>
 </head>
 <body>

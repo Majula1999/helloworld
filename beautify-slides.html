@@ -23,7 +23,7 @@
         opacity: 0;
     } */
         .slides-container {
-            xoverflow: hidden;
+            /* xoverflow: hidden; */
             position: relative;
             width: 600px;
             height: 400px;
@@ -32,7 +32,7 @@
             input {
                 display:none;
             }
-            
+
             .slide {
                 width: 600px;
                 height: 400px;
@@ -62,27 +62,27 @@
                         transition: 2s;
                         animation: leave 2s;
                         &:nth-child(1){
-                        
-                        background-image: url(https://tympanus.net/Tutorials/CSS3SlidingImagePanels/images/1.jpg);    
-                        
+
+                        background-image: url(https://tympanus.net/Tutorials/CSS3SlidingImagePanels/images/1.jpg);
+
                         }
                         &:nth-child(2){
-                        
+
                         background-image: url(https://tympanus.net/Tutorials/CSS3SlidingImagePanels/images/2.jpg);
                         }
                         &:nth-child(3){
-                        
+
                         background-image: url(https://tympanus.net/Tutorials/CSS3SlidingImagePanels/images/3.jpg);
                         }
-                    
+
                         &:nth-child(4){
-                        
+
                         background-image: url(https://tympanus.net/Tutorials/CSS3SlidingImagePanels/images/4.jpg);
                         }
                     }
                 }
-        
-                
+
+
             }
             .indicator {
                 position: absolute;
@@ -109,11 +109,11 @@
                 animation: none;
                 z-index: 50;
             }
-                
-            
+
+
         }
     </style>
-    
+
 </head>
 <body>
     <div class="slides-container">
@@ -127,7 +127,7 @@
             <span></span>
             <span></span>
             <span></span>
-    
+
         </div>
         <div>
             <span></span>
@@ -151,16 +151,16 @@
 
         </div>
     </div>
-        
-        
+
+
         <div class="indicator">
         <label for="img1"><div class="round">1</div></label>
         <label for="img2"><div class="round">2</div></label>
         <label for="img3"><div class="round">3</div></label>
         <label for="img4"><div class="round">4</div></label>
         </div>
-        
-    
+
+
     </div>
 </body>
 <script src="less.min.js"></script>
