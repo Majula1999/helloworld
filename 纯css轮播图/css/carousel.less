@@ -1,0 +1,96 @@
+* {
+  background-color: rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0 0 1px red;
+}
+
+html {
+  zoom: 2;
+}
+
+div.slider {
+  width: 300px;
+  margin: auto;
+}
+
+input:nth-child(1):checked~.slice div span:nth-child(1),
+input:nth-child(2):checked~.slice div span:nth-child(2),
+input:nth-child(3):checked~.slice div span:nth-child(3) {
+  left: 0;
+  z-index: 8;
+  animation: none;
+}
+
+
+h1 {
+  color: red;
+}
+.slice {
+  width: 300px;
+  height: 200px;
+
+  >div {
+    width: 25%;
+    height: 100%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+
+    &:nth-child(1) {
+      span {
+        background-position: 0 0;
+      }
+    }
+
+    &:nth-child(2) {
+      span {
+        background-position: -75px 0;
+      }
+    }
+
+    &:nth-child(3) {
+      span {
+        background-position: -150px 0;
+      }
+    }
+
+    &:nth-child(4) {
+      span {
+        background-position: -225px 0;
+      }
+    }
+
+    span {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: block;
+      xtext-indent: -53em;
+      left: -100%;
+      transition: .5s;
+      animation: leave .5s;
+      background-size: 300px 200px;
+
+      &:nth-child(1) {
+        background-image: url(https://travel.12306.cn/imgs/resources/uploadfiles/images/fcd7173f-7651-46e7-a126-bdc199e1f6f7_product_W572_H370.jpg);
+      }
+
+      &:nth-child(2) {
+        background-image: url(https://travel.12306.cn/imgs/resources/uploadfiles/images/b0c76b21-531b-4af4-a607-cf5672c72ded_product_W572_H370.jpg);
+      }
+
+      &:nth-child(3) {
+        background-image: url(https://travel.12306.cn/imgs/resources/uploadfiles/images/1716878f-79a2-4db1-af8c-b9c2039f0b3c_product_W572_H370.jpg);
+      }
+    }
+  }
+}
+
+@keyframes leave {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: 100%;
+  }
+}
