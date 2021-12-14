@@ -116,4 +116,31 @@
   console.log(long.toFixed(3));
 </script>
 
-<script id="ch0103/17"></script>
+<script type="xxx" id="ch0103/17">
+  var x1 = Number(prompt(''));
+  var y1 = Number(prompt(''));
+  var x2 = Number(prompt(''));
+  var y2 = Number(prompt(''));
+  var x3 = Number(prompt(''));
+  var y3 = Number(prompt(''));
+  var a = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+  var b = Math.sqrt((x2 - x3) * (x2 - x3) + (y2 - y3) * (y2 - y3));
+  var c = Math.sqrt((x3 - x1) * (x3 - x1) + (y3 - y1) * (y3 - y1));
+  var s = (a+b+c)/2;
+  var area = Math.sqrt(s*(s-a)*(s-b)*(s-c));
+  console.log(area.toFixed(2));
+</script>
+
+<script type="xxx" id="ch0103/18">
+  var a1 = Number(prompt(''));
+  var a2 = Number(prompt(''));
+  var n = Number(prompt(''));
+  var d = a2 - a1;
+// an=a1+ (n-1)d
+  console.log(a1 + (n - 1) * d);
+</script>
+
+<script>
+
+</script>
+
