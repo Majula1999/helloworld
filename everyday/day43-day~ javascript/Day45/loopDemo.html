@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    for (let line = "#"; line.length < 8; line += "#")
+      console.log(line);
+  </script>
+  <script>
+    var line = "#";
+    console.log(line);
+    while (line.length < 8) {
+      line += "#";
+      console.log(line);
+    }
+  </script>
+
+  <script>
+    for (let a = 1; a <= 100; a++) {
+      if (a % 3 == 0) {
+        console.log("Fizz");
+      } else if (a % 5 == 0) {
+        console.log("FizzBuzz");
+      } else {
+        console.log(a);
+      }
+    }
+  </script>
+
+  <script>
+    // 官方给的这种方法真好，不仅结构清晰，字符串拼接优美，还有筛选层级的美感，又利用了"||"左真输出左，否则输出右的特性，真是我学习的楷模.
+    for (let n = 1; n <= 100; n++) {
+      let output = "";
+      if (n % 3 == 0) output += "Fizz";
+      if (n % 5 == 0) output += "Buzz";
+      console.log(output || n);
+    }
+  </script>
+
+  <!-- <script>
+    let size = 8;
+    let board = "";
+    for (let y = 0; y < size; y++) {
+      for (let x = 0; x < size; x++) {
+        if ((x + y) % 2 == 0) {
+          board += " ";
+        } else {
+          board += "#";
+        }
+      }
+      board += "\n";
+    }
+    console.log(board);
+  </script> -->
+
+  <script>
+    let size = 8;
+    let board = "";
+    for (let y = 0; y < size; y++) {
+      for (let x = 0; x < size; x++) {
+        if((x + y) % 2 == 0) {
+          board += " ";
+        } else {
+          board += "#";
+        }
+      }
+      board += "\n";
+    }
+    console.log(board);
+  </script>
+</body>
+
+</html>
