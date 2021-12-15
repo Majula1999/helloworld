@@ -414,7 +414,24 @@
   }
 </script>
 
-<script id="ch0104/20">
+<script type="xxx" id="ch0104/20">
+  var a = Number(prompt('a:'))
+  var b = Number(prompt('b:'))
+  var c = Number(prompt('c:'))
+  var delta = b * b - 4 * a * c
+  if (delta == 0) {
+    var x = (-b + Math.sqrt(delta)) / (2 * a)
+    console.log('x1=x2=' + x)
+  } else if (delta > 0) {
+    var x1 = (-b + Math.sqrt(delta)) / (2 * a)
+    var x2 = (-b - Math.sqrt(delta)) / (2 * a)
+    console.log('x1=' + x1 + ';x2=' + x2 + '，其中x1 > x2。')
+  } else {
+    console.log('x1=' + (-b / (2 * a)).toFixed(5) + '+' + (Math.sqrt(-delta) / (2 * a)).toFixed(5) + 'i' + ';x2=' + (-b / (2 * a)).toFixed(5) + '-' + (Math.sqrt(-delta) / (2 * a)).toFixed(5) + 'i')
+  }
+</script>
+
+<script type="xxx" id="ch0104/21">
   var n = Number(prompt(''));
   var x = Number(prompt(''));
   var y = Number(prompt(''));
