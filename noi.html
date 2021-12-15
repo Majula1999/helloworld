@@ -260,6 +260,7 @@
 
 <script type="xxx" id="ch0104/10">
   // debugger
+  // 我这种写法真是太机智了
   var language = Number(prompt(''));
   var math = Number(prompt(''));
   if (language < 60) {
@@ -312,7 +313,7 @@
   }
 </script>
 
-<script id="ch0104/14">
+<script type="xxx" id="ch0104/14">
   var weight = Number(prompt(''));
   var letter = (prompt(''));
   // 加急
@@ -335,3 +336,59 @@
   }
 </script>
 
+<script type="xxx" id="ch0104/15">
+  var a = Number(prompt(''));
+  var b = Number(prompt(''));
+  var c = Number(prompt(''));
+  if ((a > b) && (a > c)) {
+    console.log(a);
+  } else if ((b > a) && (b > c)) {
+    console.log(b);
+  } else if ((c > b) && (c > a)) {
+    console.log(c);
+  }
+</script>
+
+<script type="xxx" id="ch0104/16">
+  var a = Number(prompt(''));
+  var b = Number(prompt(''));
+  var c = Number(prompt(''));
+  if (((a + b > c) && (a - b < c)) && ((a + c > b) && (a - c < b)) && ((b + c > a) && (b - c < a))) {
+    console.log("yes");
+  } else {
+    console.log("no");
+  }
+</script>
+
+<script type="xxx" id="ch0104/17">
+  var a = Number(prompt(''));
+  if (a % 4 == 0) {
+    if ((a % 100 == 0) && (a % 400 != 0)) {
+      console.log("N");
+    } else if (a % 3200 == 0) {
+      console.log("N");
+    } else {
+      console.log("Y");
+    }
+  } else {
+    console.log("N");
+  }
+</script>
+
+<script type="xxx" id="ch0104/18">
+  var x = Number(prompt(''));
+  var y = Number(prompt(''));
+  var xAbs = Math.abs(x);
+  var yAbs = Math.abs(y);
+  if (((xAbs >= 0) && (xAbs <= 1)) && ((yAbs >= 0) && (yAbs <= 1))) {
+    console.log("yes");
+  } else {
+    console.log("no");
+  }
+</script>
+
+<script id="ch0104">
+  var x = Number(prompt(''));
+  var y = Number(prompt(''));
+  var y = Number(prompt(''));
+</script>
