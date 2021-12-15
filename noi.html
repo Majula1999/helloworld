@@ -279,3 +279,59 @@
   }
 </script>
 
+<script type="xxx" id="ch0104/11">
+  var today = Number(prompt(''));
+  if ((today != 1) && (today != 3) && (today != 5)) {
+    console.log("YES");
+  } else {
+    console.log("NO");
+  }
+</script>
+
+<script type="xxx" id="ch0104/12">
+  var meter = Number(prompt(''));
+  var bikeTime = meter / 1.2;
+  var walkTime = (meter / 3.0) + 23 + 27;
+  if (bikeTime > walkTime) {
+    console.log("Bike");
+  } else if (bikeTime == walkTime) {
+    console.log("All");
+  } else if (bikeTime < walkTime) {
+    console.log("Walk");
+  }
+</script>
+
+<script type="xxx" id="ch0104/13">
+  var N = Number(prompt(''));
+  if ((N >= 0) && (N < 5)) {
+    console.log((-N + 2.5).toFixed(3));
+  } else if ((N >= 5) && (N < 10)) {
+    console.log((2 - 1.5 * (N - 3) * (N - 3)).toFixed(3));
+  } else if ((N >= 10) && (N < 20)) {
+    console.log((N / 2 - 1.5).toFixed(3));
+  }
+</script>
+
+<script id="ch0104">
+  var weight = Number(prompt(''));
+  var letter = (prompt(''));
+  // 加急
+  if (letter == "y") {
+    console.log("加急");
+    if (weight < 1000) {
+      console.log(8 + 5);
+    } else if (weight >= 1000) {
+      console.log(8 + (Math.ceil((weight - 1000) / 500) * 4) + 5);
+    }
+  }
+  // 不加急
+  if (letter == "n") {
+    console.log("加急");
+    if (weight < 1000) {
+      console.log(8);
+    } else if (weight >= 1000) {
+      console.log(8 + Math.ceil(((weight - 1000) / 500) * 4));
+    }
+  }
+</script>
+
