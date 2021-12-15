@@ -387,8 +387,33 @@
   }
 </script>
 
-<script id="ch0104">
+<script type="xxx" id="ch0104/19">
   var x = Number(prompt(''));
   var y = Number(prompt(''));
-  var y = Number(prompt(''));
+  var symbol = prompt('');
+  if (symbol == "+") {
+    // console.log("+");
+    console.log(x + y);
+  }
+  if (symbol == "-") {
+    console.log(x - y);
+
+  }
+  if (symbol == "*") {
+    console.log(x * y);
+
+  }
+  if (symbol == "/") {
+    if (y == 0) {
+      console.log("Divided by zero!");
+    } else {
+    console.log(x / y);
+    }
+  } else if ((symbol != "+") && (symbol != "-") && (symbol != "*") &&(symbol != "/")) {
+    console.log("Invalid operator!");
+  }
+</script>
+
+<script id="ch0104">
+
 </script>
