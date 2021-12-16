@@ -719,3 +719,18 @@ console.log(max - min);
     console.log(year);
   }
 </script> -->
+
+<script type="xxx" id="ch0105/17">
+  let k = Number(prompt("k"));
+  // kn = k(n-2) + k(n-1)
+  // c = a + b
+  let a = 1;
+  let b = 1;
+  let c;
+  for (let i = 2; i < k; i++) {
+    c = b + a;
+    a = b;
+    b = c;
+  }
+  console.log(c);
+</script>
