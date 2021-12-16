@@ -736,7 +736,7 @@ console.log(max - min);
 </script>
 
 <script type="xxx" id="ch0105/18">
-let n = Number(prompt("n"));
+  let n = Number(prompt("n"));
 let x = Number(prompt("x"));
 let y = Number(prompt("y"));
 let rate1 = y / x;
@@ -755,7 +755,7 @@ for (let i = 0, a = 0, b = 0; i < n - 1; i++) {
 </script>
 
 <script type="xxx" id="ch0105/19">
-let n = Number(prompt("n"));
+  let n = Number(prompt("n"));
 let distence;
 let sum = 0;
 for (i = 0; i < n; i++) {
@@ -769,5 +769,18 @@ console.log(Math.ceil(sum));
 </script>
 
 <script type="xxx" id="ch0105/20">
-
+  let h = Number(prompt("h"));
+  let sum = 0;
+  for (let i = 0; i < 10; i++) {
+    sum += h;
+    if (i == 9) {
+      console.log(sum.toFixed(4));
+    }
+    sum += h / 2;
+    h = h / 2
+    if (i == 9) {
+      console.log(h.toFixed(7));
+    }
+  }
 </script>
+
