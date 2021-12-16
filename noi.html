@@ -734,3 +734,22 @@ console.log(max - min);
   }
   console.log(c);
 </script>
+
+<script type="xxx" id="ch0105/18">
+let n = Number(prompt("n"));
+let x = Number(prompt("x"));
+let y = Number(prompt("y"));
+let rate1 = y / x;
+for (let i = 0, a = 0, b = 0; i < n - 1; i++) {
+  let a = Number(prompt("a"));
+  let b = Number(prompt("b"));
+  let rate2 = b / a;
+  if (rate2 - rate1 > 0.05) {
+    console.log("better");
+  } else if (rate1 - rate2 > 0.05) {
+    console.log("worse");
+  } else {
+    console.log("same");
+  }
+}
+</script>
