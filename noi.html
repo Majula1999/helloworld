@@ -237,7 +237,8 @@
   }
 </script>
 
-<script type="xxx" id="ch0104/09">
+<!-- <script type="xxx"  id="ch0104/09">
+  // 笨比写法
   var x = Number(prompt(''));
   if ((x % 3 == 0) && (x % 5 == 0) && (x % 7 == 0)) {
     console.log(3 + " " + 5 + " " + 7);
@@ -256,7 +257,48 @@
   }else if ((x % 3 != 0) && (x % 5 != 0) && (x % 7 != 0)) {
     console.log('n');
   }
+</script> -->
+
+<!-- <script type="xxx" id="ch0104/09">
+  let num = Number(prompt(""));
+  if (num % 3 == 0 && num % 5 == 0 && num % 7 == 0) {
+    console.log(3 + " " + 5 + " " + 7);
+  }
+  if (num % 3 == 0 || num % 5 == 0 || num % 7 == 0) {
+    if (n % 3 == 0) {
+      console.log(3);
+    }
+    if (n % 5 == 0) {
+      console.log(5);
+    }
+    if (n % 7 == 0) {
+      console.log(7);
+    }
+  } else {
+    console.log('n');
+  }
+</script> -->
+
+<script type="xxx" id="ch0104/09">
+  var n = Number(prompt());
+  var flag = false; // 标记变量，标记有没有进入过第三个if
+  if (n % 3 == 0) {
+    console.log(3);
+    flag = true;
+  }
+  if (n % 5 == 0) {
+    console.log(5);
+    flag = true;
+  }
+  if (n % 7 == 0) {
+    console.log(7);
+    flag = true;
+  }
+  if (!flag) {
+    console.log('n');
+  }
 </script>
+
 
 <script type="xxx" id="ch0104/10">
   // debugger
@@ -302,7 +344,7 @@
   }
 </script>
 
-<script type="xxx" id="ch0104/13">
+<!-- <script type="xxx" id="ch0104/13">
   var N = Number(prompt(''));
   if ((N >= 0) && (N < 5)) {
     console.log((-N + 2.5).toFixed(3));
@@ -311,6 +353,19 @@
   } else if ((N >= 10) && (N < 20)) {
     console.log((N / 2 - 1.5).toFixed(3));
   }
+</script> -->
+
+<script type="xxx" id="ch0105/13">
+  var x = Number(prompt());
+  var y;
+  if (x < 5) {
+    y = -x + 2.5;
+  } else if (x < 10) {
+    y = 2 - 1.5 * (x - 3) * (x - 3);
+  } else {
+    y = x / 2 - 1.5;
+  }
+  console.log(y.toFixed(3));
 </script>
 
 <script type="xxx" id="ch0104/14">
@@ -457,7 +512,7 @@
 </script>
 
 <script type="xxx" id="ch0105/03">
-    let num = Number(prompt(""));
+  let num = Number(prompt(""));
     let sum = 0;
   for (let i = 0; i < num; i++) {
     sum += Number(prompt(""));
