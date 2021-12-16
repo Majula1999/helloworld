@@ -404,6 +404,12 @@
   }
 </script>
 
+<!-- <script id="ch0104/15">
+var a = Number(prompt(''));
+  var b = Number(prompt(''));
+  var c = Number(prompt(''));
+</script> -->
+
 <script type="xxx" id="ch0104/16">
   var a = Number(prompt(''));
   var b = Number(prompt(''));
@@ -502,6 +508,22 @@
   }
   console.log((sum / n).toFixed(2));
 </script>
+
+<!-- <script type="xxx" id="ch0105/01">
+  var n = Number(prompt())
+  var ageSum = 0
+
+  var counter = 0
+
+  while (counter < n) {
+    var age = Number(prompt())
+    ageSum = ageSum + age
+    counter = counter + 1
+  }
+
+  var ageAverage = ageSum / n
+  console.log(ageAverage.toFixed(2))
+</script> -->
 
 <script type="xxx" id="ch0105/02">
   let sum = 0;
@@ -666,3 +688,34 @@ console.log(max - min);
   }
   console.log(Math.floor(M));
 </script>
+
+<script type="xxx" id="ch0105/16">
+  let N = Number(prompt("N"));
+  let K = Number(prompt("K"));
+  let year = 1;
+  do {
+    year += 1;
+    money = N * year;
+    price = 200 * (1 + K / 100) ** (year - 1)
+  } while (money < price && year < 20);
+  if (money < price) {
+      console.log("imposiible");
+    } else {
+      console.log(year);
+    }
+</script>
+
+<!-- <script>
+  let N = Number(prompt("N"));
+  let K = Number(prompt("K"));
+  let year = 1;
+  let homePrice = 200 * (1 + K / 100) ** year;
+  for (; N < homePrice && year < 20; year++) {
+    N = N * year;
+  }
+  if (N < homePrice) {
+    console.log("imposiible");
+  } else {
+    console.log(year);
+  }
+</script> -->
