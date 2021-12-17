@@ -800,6 +800,28 @@ console.log(Math.ceil(sum));
   console.log("End");
 </script>
 
-<script id="ch0105/22">
+<script type="xxx" id="ch0105/22">
+  var money = 300;
+  for (i = 0, sum = 0, budget = 0, remain = 0, save = 0; i < 12; i++) {
+    budget = Number(prompt("预算"));
+    save = Math.trunc((money + remain - budget) / 100) * 100;
+    sum = sum + save * 1.2;
+    // 不够用
+    if (money + remain < budget) {
+      console.log(-i - 1);
+      break;
+    }
+    // 不够用就输出第一次不够用的月份
+    remain = money + remain - budget - save;
+    // 每月计算结束时实时更新剩余的钱
+  }
+  if (money + remain >= budget) {
+    sum = sum + remain;
+    console.log(sum);
+  }
+  // 够用就输出总和
+</script>
+
+<script id="ch0105/23">
 
 </script>
