@@ -825,17 +825,36 @@ console.log(Math.ceil(sum));
 <script type="xxx" id="ch0105/23">
   var m = Number(prompt("药品总量m"));
   var n = Number(prompt("取药人数n"));
+  // 还没吃药的人
    var count = 0;
-    // 还没吃药的人
   for (i = 0; i < n; i++) {
     var x = Number(prompt("每个病人取药数量"));
+    // 如果药品不够
     if (m - x < 0) {
-      // 如果药品不够
       count++;
     } else {
-      m -= x;
       // 药品够就减
+      m -= x;
     }
   }
   console.log(count);
 </script>
+
+<script type="xxx" id="ch0105/24">
+  var n = Number(prompt("n"));
+  var hours = 0;
+  var result = 0;
+  for (i = 0; i < n; i++) {
+    var x = Number(prompt("x"));
+    var y = Number(prompt("y"));
+    if (x >= 90 && x <= 140 && y >= 60 && y <= 90) {
+      // 每次循环给hours加一,同时用result存储最大连续次数,如果血压不正常就清空s,但result仍然保存好
+      hours++;
+      result = Math.max(result, hours);
+    } else {
+      hours = 0;
+    }
+  }
+  console.log(result);
+</script>
+
