@@ -784,19 +784,18 @@ console.log(Math.ceil(sum));
   }
 </script>
 
-<script id="ch0105/21">
+<script type="xxx" id="ch0105/21">
   let N = Number(prompt("N"));
   let sentence;
-  while (n != 1) {
+  while (N != 1) {
     if (N % 2 == 1) {
-      N = N * 3 + 1;
+      sentence = N * 3 + 1;
+      console.log("" + N + "*" + "3" + "+" + "1" + "=" + sentence);
     } else if (N % 2 == 0) {
-      N /= 2;
+      sentence = N / 2;
+      console.log("" + N + "/" + "2" + "=" + sentence);
     }
+    N = sentence;
   }
-
-
-  if (N == 1) {
-    console.log("End");
-  }
+  console.log("End");
 </script>
