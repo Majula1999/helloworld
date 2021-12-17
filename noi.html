@@ -858,7 +858,20 @@ console.log(Math.ceil(sum));
   console.log(result);
 </script>
 
-<!-- <script id="ch0105/25">
+<script id="ch0105/25">
 // 9进制最大三位数,81*8+9*8+8=728
-
-</script> -->
+// debugger
+for (x = 1; x < 7; x++) {
+  for (y = 0; y < 7; y++) {
+    for (z = 1; z < 7; z++) {
+      var system7 = x * 7 ** 2 + y * 7 + z;
+      var system9 = z * 9 ** 2 + y * 9 + x;
+      if (system7 == system9) {
+        console.log(system7);
+        console.log(x * 100 + y * 10 + z);
+        console.log(z * 100 + y * 10 + x);
+      }
+    }
+  }
+}
+</script>
