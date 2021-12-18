@@ -918,7 +918,7 @@ var l = number.toString().length;
 var result = "";
 for (i = 0; i < l; i++) {
   x = number % 10;
-  number = (number - number % 10) / 10;
+  number = (number - x) / 10;
   console.log(x);
 }
 </script>
