@@ -1009,14 +1009,14 @@ console.log(result);
     }
 </script>
 
-<script type="xxx" id="ch0105/31">
+<script id="ch0105/31">
   // 你麻麻地又开灯又关灯多多少少沾点nt
   var N = Number(prompt("N盏灯"));
   var M = Number(prompt("M个人"));
   // 记录状态
   var result = "";
   // 人循环
-  for (i = 1; i <= M; i++) {
+  for (i = 2; i <= M; i++) {
     var flag = 1;
     // 灯循环
     for (j = 1; j <= N; j++) {
@@ -1029,9 +1029,9 @@ console.log(result);
       }
     }
     if(flag == -1) {
-      result += "," + i;
+      result = result + "," + i;
       // console.log(i);
     }
   }
-  console.log(result);
+  console.log(1 + result);
 </script>
