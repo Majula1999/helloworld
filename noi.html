@@ -1059,3 +1059,33 @@ for (i = 0; i < l; i++) {
   }
   console.log(sum.toFixed(4));
 </script>
+
+<script type="xxx" id="ch0105/34">
+  // 1! + 2! + ... + n!
+  var n = Number(prompt("n"));
+  // 第几项
+  let sum = 0;
+  for (var x = 1; x <= n; x++) {
+    var f = 1;
+    // 第几项的具体阶乘
+    for(var y = 1; y <= x; y++) {
+        f *= y;
+    }
+    sum += f;
+  }
+  console.log(sum);
+</script>
+
+<script type="xxx" id="ch0105/35">
+  var n = Number(prompt("n"));
+  let sum = 0;
+  for (var x = 1; x <= n; x++) {
+    var a = 1;
+    for (var y = 1; y <= x; y++) {
+      a *= y;
+      b = 1 / a;
+    }
+    sum += b;
+  }
+  console.log((1 + sum).toFixed(10));
+</script>
