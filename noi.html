@@ -937,46 +937,24 @@ console.log(result);
 
 </script> -->
 
-<!-- <script type="xxx" id="ch0105/29">
-  // debugger
-  // 因为负数比正数多了一位,所以分开循环
-  var n = String(prompt("n"));
-  var result = "";
-  for(var i = n.length; i > 0; i--) {
-    if (n > 0) {
-      result = result + n % 10;
-      n = n - n % 10;
-      n = n / 10;
-    } else {
-      while(n % 10 == 0) {
-        n = n /10;
-      }
-      result = result + n % 10 - 1;
-      n = n - n % 10;
-      n = n / 10;
-      if (n == 0) {
-        result *= -1;
-        break;
-      }
-    }
-  }
-  console.log(result);
-</script> -->
-
 <script type="xxx" id="ch0105/29">
   var N = Number(prompt());
   var x;
   var n;
   var result = 0;
   var positive = 1;
+  // 提前定义一个positive用来记录正负值,如果是负值的话,用字符串拼接一个负号就好了，写的真好
   if (N < 0) {
     positive = 0;
     N = -N;
   }
+  // 等于0直接输出0.
   if (N == 0) {
     console.log(N);
   }
+  // 用容器n把N存起来，方便对N进行操作
   n = N;
+  // 无论正负都只执行这个循环
   while (N > 0) {
     x = N % 10;
     if (x != 0 || N < n) {
@@ -984,6 +962,7 @@ console.log(result);
     }
     N = (N - x) / 10;
   }
+  // 循环执行完，根据positive记录的正负值情况输出对应的正负值
   if (positive == 0) {
     console.log('-' + result);
   } else {
