@@ -1009,6 +1009,29 @@ console.log(result);
     }
 </script>
 
-<script id="ch0105/31">
-
+<script type="xxx" id="ch0105/31">
+  // 你麻麻地又开灯又关灯多多少少沾点nt
+  var N = Number(prompt("N盏灯"));
+  var M = Number(prompt("M个人"));
+  // 记录状态
+  var result = "";
+  // 人循环
+  for (i = 1; i <= M; i++) {
+    var flag = 1;
+    // 灯循环
+    for (j = 1; j <= N; j++) {
+      // 找到对应灯取反
+      if (i % j == 0) {
+        flag *= -1;
+        // 否则不动，这段没什么软用就是方便理解
+      } else {
+        flag = flag;
+      }
+    }
+    if(flag == -1) {
+      result += "," + i;
+      // console.log(i);
+    }
+  }
+  console.log(result);
 </script>
