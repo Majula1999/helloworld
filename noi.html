@@ -900,7 +900,7 @@ for (x = 1; x < 7; x++) {
 </script>
 
 <script type="xxx" id="ch0105/27">
- var K = Number(prompt("K"));
+  var K = Number(prompt("K"));
  var n = 1;
  var Sn = 1;
  while (Sn <= K) {
@@ -935,4 +935,73 @@ console.log(result);
   }
   console.log(result);
 
+</script> -->
+
+<!-- <script type="xxx" id="ch0105/29">
+  // debugger
+  // 因为负数比正数多了一位,所以分开循环
+  var n = String(prompt("n"));
+  var result = "";
+  for(var i = n.length; i > 0; i--) {
+    if (n > 0) {
+      result = result + n % 10;
+      n = n - n % 10;
+      n = n / 10;
+    } else {
+      while(n % 10 == 0) {
+        n = n /10;
+      }
+      result = result + n % 10 - 1;
+      n = n - n % 10;
+      n = n / 10;
+      if (n == 0) {
+        result *= -1;
+        break;
+      }
+    }
+  }
+  console.log(result);
+</script> -->
+
+<script type="xxx" id="ch0105/29">
+  var N = Number(prompt());
+  var x;
+  var n;
+  var result = 0;
+  var positive = 1;
+  if (N < 0) {
+    positive = 0;
+    N = -N;
+  }
+  if (N == 0) {
+    console.log(N);
+  }
+  n = N;
+  while (N > 0) {
+    x = N % 10;
+    if (x != 0 || N < n) {
+      result = (result * 10 + x);
+    }
+    N = (N - x) / 10;
+  }
+  if (positive == 0) {
+    console.log('-' + result);
+  } else {
+    console.log(result);
+  }
+</script>
+
+<!-- <script id="ch0105/29">
+  // 不分开循环
+  // debugger
+  var n = Number(prompt("n"));
+  var result = 0;
+  // 用flag控制正负
+  var flag = (n < 0) ? n.length - 1 : n.length;
+  for (var i = 0; i < flag; i++) {
+    ge = n % 10;
+    n = (n - ge) / 10;
+    result += ge * (10 ** (flag - i - 1));
+  }
+  console.log(result);
 </script> -->
