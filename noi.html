@@ -984,6 +984,31 @@ console.log(result);
   console.log(result);
 </script> -->
 
-<!-- <script id="ch0105/30">
+<script type="xxx" id="ch0105/30">
+  // debugger
+  // 逻辑很简单但是我被卡住了你麻麻地，我是笨比
+  var m = Number(prompt("m"));
+  var k = Number(prompt("k"));
+  var l = m.toString().length;
+  var counter = 0;
+  // console.log(l);
+  if (m % 19 == 0) {
+    for (i = 0; i < l; i++) {
+      var digit = m % 10;
+      if (digit == 3) {
+        counter++;
+      }
+      m = (m - digit) / 10;
+    }
+    if (counter == k) {
+        console.log("YES");
+      }
+    }
+    else {
+      console.log("NO");
+    }
+</script>
 
-</script> -->
+<script id="ch0105/31">
+
+</script>
