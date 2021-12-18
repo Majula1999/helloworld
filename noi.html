@@ -917,7 +917,7 @@ var number = Number(prompt("number"));
 var l = number.toString().length;
 var result = "";
 for (i = 0; i < l; i++) {
-  result = result + number % 10 + " ";
+  result = result + " " + number % 10;
   number = (number - number % 10) / 10;
 }
 console.log(result);
@@ -1009,13 +1009,14 @@ console.log(result);
     }
 </script>
 
-<script id="ch0105/31">
+<script type="xxx" id="ch0105/31">
   // 你麻麻地又开灯又关灯多多少少沾点nt
   var N = Number(prompt("N盏灯"));
   var M = Number(prompt("M个人"));
   // 记录状态
   var result = "";
   // 人循环
+  // 因为第一个灯永远灭,所以外层循环从2开始，结尾输出手动拼出来1再加后续结果
   for (i = 2; i <= M; i++) {
     var flag = 1;
     // 灯循环
