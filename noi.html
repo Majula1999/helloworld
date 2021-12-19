@@ -1164,3 +1164,25 @@ for (i = 0; i < l; i++) {
   }
   console.log(count);
 </script>
+
+<script type="xxx" id="ch0105/42">
+  var height = Number(prompt("height"));
+  var width = Number(prompt("width"));
+  var character = prompt("character");
+  var empty = Number(prompt("isEmpty"));
+  for (var i = 0; i <= height; i++) {
+    var result = "";
+    for (var j = 0; j <= width; j++) {
+      if (i == 0 || j == 0 || i == height - 1 || j == width - 1) {
+        result += character;
+      } else {
+        if (empty == 1) {
+          result += character;
+        } else {
+          result = result + ' ';
+        }
+      }
+    }
+    console.log(result);
+  }
+</script>
