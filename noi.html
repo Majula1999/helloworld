@@ -1267,40 +1267,40 @@ for (var i = 100; i <= 10000; i++) {
   }
 </script>
 
-<script type="xxx" id="palindrom">
+<script id="palindrom">
   // 道理我都懂，但我不会做
 //输入一个数，判断它数是否是回文数，如1223221
-  // var n = Number(prompt());
-  // var count = 1;
-  // var flag = true;
-  // if (n == 0) {
-  //   flag = true;
-  // } else {
-  //   for (var N = n; N != 0;) {
-  //     var a = N % 10;
-  //     N = (N - a) / 10;
-  //     if (N != 0) {
-  //       count *= 10;
-  //     }
-  //   }
-  //   for (; count >= 1;) {
-  //     var x = n % 10;
-  //     var y = Math.trunc(n / count);
-  //     if (x == y) {
-  //       n = (n - x) / 10 - y * (count / 10);
-  //       count = count / 100;
-  //       flag = true;
-  //     }
-  //     else {
-  //       flag = false;
-  //       break;
-  //     }
-  //   }
-  // }
-  // if (flag == true) {
-  //   console.log('YES');
-  // } else {
-  //   console.log('NO');
-  // }
+  var n = Number(prompt());
+  var count = 1;
+  var flag = true;
+  if (n == 0) {
+    flag = true;
+  } else {
+    for (var N = n; N != 0;) {
+      var a = N % 10;
+      N = (N - a) / 10;
+      if (N != 0) {
+        count *= 10;
+      }
+    }
+    for (; count >= 1;) {
+      var x = n % 10;
+      var y = Math.trunc(n / count);
+      if (x == y) {
+        n = (n - x) / 10 - y * (count / 10);
+        count = count / 100;
+        flag = true;
+      }
+      else {
+        flag = false;
+        break;
+      }
+    }
+  }
+  if (flag == true) {
+    console.log('YES');
+  } else {
+    console.log('NO');
+  }
 </script>
 
