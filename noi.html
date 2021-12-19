@@ -1149,6 +1149,18 @@ for (i = 0; i < l; i++) {
   console.log(count);
 </script>
 
-<script id="ch0105/41">
-
+<script type="xxx" id="ch0105/41">
+  var L = Number(prompt("L"));
+  var R = Number(prompt("R"));
+  var count = 0;
+  for (var i = L; i <= R; i ++) {
+    // 经典操作之过河拆桥，用完就减一位，非常巧妙
+    // 此处用x = Math.trunc(x / 10)应该也可以起这个效果
+    for (var x = i; x > 0; x = (x - x % 10) / 10) {
+      if (x % 10 == 2) {
+        count++;
+      }
+    }
+  }
+  console.log(count);
 </script>
