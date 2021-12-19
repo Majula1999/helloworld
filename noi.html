@@ -1165,7 +1165,7 @@ for (i = 0; i < l; i++) {
   console.log(count);
 </script>
 
-<script id="ch0105/42">
+<script type="xxx" id="ch0105/42">
   var height = Number(prompt("height"));
   var width = Number(prompt("width"));
   var character = prompt("character");
@@ -1185,4 +1185,56 @@ for (i = 0; i < l; i++) {
     }
     console.log(result);
   }
+</script>
+
+<script type="xxx" id="ch0105/43">
+  var n = Number(prompt("n"));
+  // 判断质数循环范围就是从2到根号n,质因数同理
+  var sqrt = Math.trunc(Math.sqrt(n));
+  for (var i = 2; i <= sqrt; i++) {
+    if (n % i == 0) {
+      console.log(n / i);
+    }
+  }
+</script>
+
+<script type="xxx" id="ch0105/44">
+  let n = Number(prompt("n"));
+  let i = 2;
+  let num = 1;
+  if (n == 1) {
+    console.log(2);
+  } else {
+    while (true) {
+      i++;
+      let k = 0;
+      for (let j = 2; j < i; j++) {
+        if (i % j == 0) {
+          k++;
+        }
+      }
+      if (k == 0) {
+        num++;
+      }
+      if (num == n) {
+        console.log(i);
+        break;
+      }
+    }
+  }
+</script>
+
+<script id="ch0105/45">
+var n = Number(prompt("n"));
+var sum = 0;
+var day = 0;
+// 天数循环
+for (var i = 1; day < n; i++) {
+  // 金币循环
+  for (var j = 1; j <= i; j++) {
+    sum += i;
+    day += 1;
+  }
+}
+console.log(sum);
 </script>
