@@ -1,0 +1,53 @@
+<!-- 求阶乘的函数 -->
+<!-- <script>
+  function factorial(n) {
+    var sum = 1;
+    for (i = n; i > 1; i--) {
+      sum *= i;
+    }
+    return sum;
+  }
+  console.log(factorial(3));
+</script> -->
+
+<!-- 判断素数 -->
+<!-- <script>
+  function isPrime(n) {
+    for (var i = 2; i * i <= n; i++) {
+      if(n % i == 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+  console.log(isPrime(7));
+</script> -->
+
+<!-- 与7有关 -->
+<!-- <script>
+  function qiao7(n) {
+    if (n % 7 == 0) {
+      return true;
+    }
+    while (n > 0) {
+      var digit = n % 10;
+      if (digit == 7) {
+        return true;
+      }
+      n = (n - digit) / 10;
+    }
+  }
+</script> -->
+
+<!-- 斐波那契数列 -->
+<script>
+  function fibb(n) {
+  var a = 0;
+  var b = 1;
+  for (var i = 0; i < n; i++) {
+    b = a + b;
+    a = b - a;
+  }
+  return a;
+}
+</script>
