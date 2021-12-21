@@ -1272,24 +1272,42 @@ for (i = 0; i < l; i++) {
       return "NO";
     }
   }
-console.log(narcissistic(n));`
+console.log(narcissistic(n));
 </script>
 
-<script type="xxx" id="narcissistics">
+<script type="" id="narcissistics">
   // 输出10000以内的水仙花数
   function narcissistics() {
-    for (var i = 100; i <= 1000; i++) {
+    for (var i = 100; i < 1000; i++) {
       var ge = i % 10;
       var shi = (i - ge) / 10 % 10;
       var bai = (i - ge - shi * 10) / 100;
       if (ge ** 3 + shi ** 3 + bai ** 3 == i) {
-        return i;
+        console.log(i);
       }
     }
-    return i;
   }
-  console.log(narcissistics());
+  narcissistics();
 </script>
+
+<!-- <script type="" id="narcissistics">
+  // narcissistics: 输出10000以内的水仙花数
+  function narcissistics() {
+    for (n = 0; n < 1000; n++) {
+      var N = String(n).length;
+      if (N == 3) {
+        for (i = 0, a = 0, s = 0; i < 3; i++) {
+          a = Math.trunc(n / 10 ** i) % 10;
+          s = s + a ** 3;
+        }
+        if (s == n) {
+          console.log(n);
+        }
+      }
+    }
+  }
+  narcissistics();
+</script> -->
 
 <script type="xxx" id="palindrom">
   // 道理我都懂，但我不会做
@@ -1328,7 +1346,7 @@ console.log(narcissistic(n));`
   }
 </script>
 
-<script type="" id="weekday">
+<script type="xxx" id="weekday">
   // weekday: 输入年份与月份，输出这个月的第一天是周几（视具体设定，周一可以用1或0表示
   var weekday;
   var year,month;
@@ -1380,4 +1398,32 @@ console.log(narcissistic(n));`
     }
   }
   primes()
+</script>
+
+<script type="xxx" id="lcf&lcm">
+  // lcf&lcm: 输入两个数，输出它们的最大公约数和最小公倍数
+  var a = Number(prompt("a"));
+  var b = Number(prompt("b"));
+  function lc(a, b) {
+    if (a % b == 0) return b;
+    return lc(a, a % b);
+  }
+  // 最大公倍数 迭代
+  function gcd(a,b){
+    if(b == 0){
+      return a;
+    }
+    var r = a % b;
+    return gcd(b,r);
+  }
+// 最小公倍数就是乘积除以最大公倍数
+function lcm(a,b){
+  return (a*b)/gcd(a,b);
+}
+console.log(lc(a, b));
+  console.log(lcm(a, b));
+</script>
+
+<script id="sqrt">
+
 </script>
