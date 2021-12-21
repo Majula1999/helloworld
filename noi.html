@@ -1259,7 +1259,7 @@ for (i = 0; i < l; i++) {
   console.log(sum);
 </script>
 
-<script type="xxx" id="narcissistic">
+<script id="narcissistic">
   //输入一个数，判断是否是水仙花数，水仙花数是各位数的立方和等于这个数的三位数
   // var n = Number(prompt());
   // var a = n % 10;
@@ -1270,6 +1270,7 @@ for (i = 0; i < l; i++) {
   // } else {
   //   console.log('NO');
   // }
+  var n = Number(prompt("n"));
   function narcissistic (n) {
     var ge = n % 10;
     var shi = (n - ge) / 10 % 10;
@@ -1280,9 +1281,10 @@ for (i = 0; i < l; i++) {
       return "NO";
     }
   }
+  console.log(narcissistic(n));
 </script>
 
-<script id="narcissistics">
+<script type="xxx" id="narcissistics">
   // 输出10000以内的水仙花数
   function narcissistics(n) {
     for (var i = 100; i <= n; i++) {
@@ -1330,8 +1332,8 @@ for (i = 0; i < l; i++) {
     }
   }
   if (flag == true) {
-    console.log('YES');
+    return "YES";
   } else {
-    console.log('NO');
+    return "NO";
   }
 </script>
