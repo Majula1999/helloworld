@@ -1261,21 +1261,12 @@ for (i = 0; i < l; i++) {
 
 <script id="narcissistic">
   //输入一个数，判断是否是水仙花数，水仙花数是各位数的立方和等于这个数的三位数
-  // var n = Number(prompt());
-  // var a = n % 10;
-  // var b = (n - a) / 10 % 10;
-  // var c = (n - a - 10 * b) / 100;
-  // if (a * a * a + b * b * b + c * c * c == n) {
-  //   console.log('YES');
-  // } else {
-  //   console.log('NO');
-  // }
   var n = Number(prompt("n"));
   function narcissistic (n) {
     var ge = n % 10;
     var shi = (n - ge) / 10 % 10;
     var bai = (n - ge - shi * 10) / 100;
-    if(ge ** 3 + shi ** 3 + bai ** 3) {
+    if(ge ** 3 + shi ** 3 + bai ** 3 == n) {
       return "YES";
     } else {
       return "NO";
