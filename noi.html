@@ -1120,7 +1120,22 @@ for (i = 0; i < l; i++) {
 </script>
 
 <script type="xxx" id="ch0105/38">
+  var m = Number(prompt())
 
+  for (var i = 0; i < m; i++) {
+    var n = Number(prompt())
+    if (n == 0) { // 只有常数项，直接输出0，但要将输入接住，否则这次的输入会混入下一组数据
+      var c = Number(prompt())
+      console.log(0)
+    } else { // 不只有常数项
+      for (var j = n; j >= 0; j--) {
+        var c = Number(prompt())
+        if (j !== 0) { // 此种情况不用输出最后的0
+          console.log(c * j)
+        }
+      }
+    }
+  }
 </script>
 
 <script type="xxx" id="ch0105/39">
@@ -1258,7 +1273,7 @@ for (i = 0; i < l; i++) {
 </script>
 
 <script type="xxx" id="narcissistics">
-// 输出10000以内的水仙花数
+  // 输出10000以内的水仙花数
 for (var i = 100; i <= 10000; i++) {
     var sum = 0;
     for (var j = i; j != 0;) {
@@ -1308,4 +1323,3 @@ for (var i = 100; i <= 10000; i++) {
     console.log('NO');
   }
 </script>
-
