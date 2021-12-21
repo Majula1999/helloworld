@@ -1259,7 +1259,7 @@ for (i = 0; i < l; i++) {
   console.log(sum);
 </script>
 
-<script id="narcissistic">
+<script type="xxx" id="narcissistic">
   //输入一个数，判断是否是水仙花数，水仙花数是各位数的立方和等于这个数的三位数
   var n = Number(prompt("n"));
   function narcissistic (n) {
@@ -1272,24 +1272,23 @@ for (i = 0; i < l; i++) {
       return "NO";
     }
   }
-  console.log(narcissistic(n));
+console.log(narcissistic(n));`
 </script>
 
 <script type="xxx" id="narcissistics">
   // 输出10000以内的水仙花数
-  function narcissistics(n) {
-    for (var i = 100; i <= n; i++) {
-      var sum = 0;
-      for (var j = i; j != 0;) {
-        var a = j % 10;
-        j = (j - a) / 10;
-        sum = a * a * a + sum;
-      }
-      if (sum == i) {
-        return sum;
+  function narcissistics() {
+    for (var i = 100; i <= 1000; i++) {
+      var ge = i % 10;
+      var shi = (i - ge) / 10 % 10;
+      var bai = (i - ge - shi * 10) / 100;
+      if (ge ** 3 + shi ** 3 + bai ** 3 == i) {
+        return i;
       }
     }
+    return i;
   }
+  console.log(narcissistics());
 </script>
 
 <script type="xxx" id="palindrom">
@@ -1327,4 +1326,58 @@ for (i = 0; i < l; i++) {
   } else {
     return "NO";
   }
+</script>
+
+<script type="" id="weekday">
+  // weekday: 输入年份与月份，输出这个月的第一天是周几（视具体设定，周一可以用1或0表示
+  var weekday;
+  var year,month;
+  function getDate(year, month) {
+    var nowdate = new Date("" + year + "," + month + ",01");
+    weekday = nowdate.getDay();
+    return weekday;
+  }
+  console.log(getDate(year, month));
+</script>
+
+<script type="xxx" id="prime">
+  // prime: 输入一个数，判断它是否是素数
+  function prime(n) {
+    if (n === 2) {
+      return true;
+    }
+    for (let i = 2; i < n; i++) {
+      if (n % i == 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+  console.log(prime(307));
+</script>
+
+
+
+<script type="xxx" id="primes">
+  // primes: 输出100以内的素数
+  function prime(n) {
+    if (n === 2) {
+      return true;
+    }
+    for (let i = 2; i < n; i++) {
+      if (n % i == 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function primes() {
+    for (let i = 2; i <= 100; i++) {
+      if (prime(i)) {
+        console.log(i);
+      }
+    }
+  }
+  primes()
 </script>
