@@ -9,3 +9,11 @@ var obj = {
   gender: '男',
   age: 28,
 }
+function indexOf(array, value, fromIndex = 0) {
+  for (var i = fromIndex; i < array.length; i++) {
+      if (array[i] === value) {
+          return i
+      }
+  }
+  return -1
+}
