@@ -16,3 +16,18 @@ function slice(array, start, end) {
   }
   return result;
 }
+
+function fill(array, val) {
+  for(i = 0; i < array.length; i++) {
+    array[i] = val;
+  }
+  return array;
+}
+
+function sum () {
+  let result = 0;
+  for (i = 0; i < sum.length; i++) {
+    result += sum[i];
+  }
+  return result;
+}
