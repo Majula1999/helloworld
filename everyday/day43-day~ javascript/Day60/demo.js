@@ -31,3 +31,14 @@ function sum () {
   }
   return result;
 }
+
+// splice(起始位置， 结束位置， (替换的内容));
+a = [1, 2, 3, 4];
+a.splice(1,2);
+a = [1, 4];
+a.splice(0,1,"111");
+a = ["111", 4];
+a.splice(0, 0, "aaa");
+a = ["aaa", "111", 4];
+a.splice(a.length, 0, "bbb");
+a = ["aaa", "111", 4, "bbb"];
