@@ -17,7 +17,6 @@
     if (array.length == 0) {
       return null
     }
-
     var nodes = []
     for (var i = 0; i < array.length; i++) {
       // 对于数组中的每个值，创建一个链表结点
@@ -27,7 +26,6 @@
       }
       nodes.push(node)
     }
-
     for (var i = 0; i < nodes.length - 1; i++) {
       // 把每个结点的next指向其后续的结点
       nodes[i].next = nodes[i + 1]
@@ -91,5 +89,140 @@
     return prev
   }
 
+  function arrayToListR(array) {
+    if (array.length == 0) {
+      return null
+    }
+    var head = {
+      val: array[0],
+      next: null
+    }
+    var tail = arrayToListR(array.slice(1))
+    head.next = tail
+    return head
+  }
+
+  // 将数组array从start开始到结束转为链表
+  function arrayToListR2(array, start = 0) {
+    if (start == array.length) {
+      return null
+    }
+    var head = new ListNode(array[start])
+    var tail = arrayToListR2(array, start + 1)
+    head.next = tail
+    return head
+  }
+
+
+  function listToArray(head) {
+    if (head == null) {
+      return []
+    }
+
+    var result = []
+
+    while (head) {
+      result.push(head.val)
+      head = head.next
+    }
+
+    return result
+  }
+
+  function listToArrayR(head) {
+    if (head == null) {
+      return []
+    }
+
+    var ary = listToArrayR(head.next)
+
+    return [head.val].concat(ary)
+  }
+
+
+  function prepend(val, head) {
+    return {
+      val: val,
+      next: head
+    }
+  }
+
+  function append(val, head) {
+    var node = {
+      val: val,
+      next: null,
+    }
+    if (head == null) {
+      return node
+    }
+
+    var p = head
+    while (p.next) {
+      p = p.next
+    }
+    p.next = node
+    return head
+  }
+
+
+  function nth(list, n) {
+    if (list == null || n < 0) {
+      return undefined
+    }
+    var p = list
+    var c = 0
+
+    while (p && c < n) {
+      c++
+      p = p.next
+    }
+
+    if (p) {
+      return p.val
+    } else {
+      return undefined
+    }
+  }
+
+  function nth2(list, n) {
+    if (list == null || n < 0) {
+      return undefined
+    }
+    if (n == 0) {
+      return list.val
+    }
+    return nth(list.next, n - 1)
+  }
+
+  function insert(list, n, val) {
+    var node = new ListNode(val)
+
+    if (n == 0) {
+      node.next = list
+      return node
+    }
+
+    var p = list
+    var c = 0
+
+    while (p && c < n - 1) {
+      c++
+      p = p.next
+    }
+
+    // var q = p.next
+    // p.next = node
+    // node.next = q
+
+    node.next = p.next
+    p.next = node
+
+    return list
+  }
+
+  function ListNode(val, next) {
+    this.val = (val===undefined ? 0 : val)
+    this.next = (next===undefined ? null : next)
+  }
 
 </script>
