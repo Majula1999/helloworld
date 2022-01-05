@@ -129,13 +129,11 @@
     return result
   }
 
-  function listToArrayR(head) {
+  function listToArrayR (head) {
     if (head == null) {
       return []
     }
-
     var ary = listToArrayR(head.next)
-
     return [head.val].concat(ary)
   }
 
