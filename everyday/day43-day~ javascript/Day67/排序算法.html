@@ -1,0 +1,79 @@
+<script>
+
+// 生成n个由n以内的整数组成的随机数组
+function randomAry(n) {
+  var ary = []
+  for (var i = 0; i < n; i++) {
+    var rand = Math.random()
+    ary.push(  Math.floor(rand * n)  )
+  }
+  return ary
+}
+
+// 判断一个数组是否是升序的
+function isSorted(ary) {
+  for (var i = 1; i < ary.length; i++) {
+    if (ary[i] < ary[i - 1]) {
+      return false
+    }
+  }
+  return true
+}
+
+function insertSort(ary) {
+  for (var i = 1; i < ary.length; i++) {
+    var t = ary[i]
+    for (var j = i - 1; j >= 0; j--) {
+      if (ary[j] > t) {
+        ary[j + 1] = ary[j]
+      } else {
+        break
+      }
+    }
+    ary[j + 1] = t
+  }
+  return ary
+}
+
+// 交换数组第i和第j项的值
+function swap(ary, i, j) {
+  var t = ary[i]
+  ary[i] = ary[j]
+  ary[j] = t
+}
+
+// 冒泡排序
+function bubbleSort(ary) {
+  // 遍历交换的结束位置
+  for (var i = ary.length - 2; i >= 0; i--) {
+    var swapped = false
+    for (var j = 0; j <= i; j++) { // 从0到第i个元素分别跟其右边的元素对比交换
+      if (ary[j] > ary[j + 1]) {
+        swapped = true
+        swap(ary, j, j + 1)
+      }
+    }
+    if (!swapped) { // 如果某次遍历没有交换过，说明数组已经有序，结束
+      break
+    }
+  }
+  return ary
+}
+
+function selectSort(ary) {
+  for (var i = 0; i < ary.length - 1; i++) {
+    // 找出剩下元素中最小的放入i位置
+    var minIdx = i // 假设查找范围的第一项即为最小的
+    for (var j = i + 1; j < ary.length - 1; j++) {
+      if (ary[j] < ary[minIdx]) {
+        minIdx = j
+      }
+    }
+    // 将最小的元素放到i位置上，并把i位置原来的值放入最小元素的位置
+    swap(ary, i, minIdx)
+  }
+  return ary
+}
+
+
+</script>
