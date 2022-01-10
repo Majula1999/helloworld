@@ -1,1 +1,1 @@
-var Majula1999 = {chunk: function(){}}
+var majula1999 = {chunk: function(){}}
