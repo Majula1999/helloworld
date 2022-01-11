@@ -157,30 +157,36 @@ function mergeSortInPlace(ary, start = 0, end = ary.length) {
   return ary
 }
 
+// 快速排序
 function quickSort(ary) {
+  // 如果长度小于2直接返回
   if (ary.length < 2) {
     return ary.slice()
   }
   var randomIdx = Math.floor(Math.random() * ary.length)
+  // 哨兵指针随机
   var pivot = ary[randomIdx]
   var left = []
   var mid = []
   var right = []
 
   for (var i = 0; i < ary.length; i++) {
+    // 比哨兵小的push进left
     if (ary[i] < pivot) {
       left.push(ary[i])
+      // 反之push进right
     } else if (ary[i] > pivot) {
       right.push(ary[i])
     } else {
+      // 相等的就是哨兵，push进mid
       mid.push(ary[i])
     }
   }
-
+  // 递归处理left和right
   quickSort(left)
   quickSort(right)
-
   var i = 0
+  // 从左到中到右把数组重新拼起来
   for (var j = 0; i < left.length; j++) {
     ary[i++] = left[j++]
   }
@@ -190,43 +196,36 @@ function quickSort(ary) {
   for (var j = 0; i < right.length; j++) {
     ary[i++] = right[j++]
   }
-
   return ary
 }
-
-
 // 对数组ary的从start到end（包含）的元素进行快排
 function qSort(ary, start = 0, end = ary.length - 1) {
   if (start >= end) {
     return ary
   }
-
   var pivotIdx = Math.floor(Math.random() * (end - start + 1) + start)
   var pivot = ary[pivotIdx]
-
+  // 交换ary中的哨兵和end
   swap(ary, pivotIdx, end)
-
   var i = start
-
-  // 不遍历放在最后的哨兵元素
+  // 不遍历放在最后的哨兵元素，此处注意j<end和j<=end区别
   for (var j = start; j < end; j++) {
+    // 如果遍历的元素比哨兵小就交换
     if (ary[j] < pivot) {
       swap(ary, i, j)
       i++
     }
   }
-
   swap(ary, i, end) // 将哨兵元素换回中间
-
   //此时，i位置是哨兵元素
   //i+1到j之间是[大于等于]哨兵元素
   //start到i-1是[小于]哨兵元素
   //i位置的数本身不用再动了，因为哨兵元素在有序后也一定会放在i位置
   qSort(ary, start, i - 1)
   qSort(ary, i + 1, end)
-
   return ary
 }
+
 
 // 对数组ary的从start到end（包含）的元素进行快排
 // predicate函数针对数组中的元素返回一个确定其顺序的数值
@@ -235,14 +234,10 @@ function qSortBy(ary, predicate = it => it, start = 0, end = ary.length - 1) {
   if (start >= end) {
     return ary
   }
-
   var pivotIdx = Math.floor(Math.random() * (end - start + 1) + start)
   var pivot = ary[pivotIdx]
-
   swap(ary, pivotIdx, end)
-
   var i = start
-
   // 不遍历放在最后的哨兵元素
   for (var j = start; j < end; j++) {
     if (predicate(ary[j]) < predicate(pivot)) {
@@ -250,35 +245,26 @@ function qSortBy(ary, predicate = it => it, start = 0, end = ary.length - 1) {
       i++
     }
   }
-
   swap(ary, i, end) // 将哨兵元素换回中间
-
   //此时，i位置是哨兵元素
   //i+1到j之间是[大于等于]哨兵元素
   //start到i-1是[小于]哨兵元素
   //i位置的数本身不用再动了，因为哨兵元素在有序后也一定会放在i位置
   qSortBy(ary, predicate, start, i - 1)
   qSortBy(ary, predicate, i + 1, end)
-
   return ary
 }
-
 qSortBy(ancestry, it => -it.born)
-
 // 对数组ary的从start到end（包含）的元素进行快排
 // compare函数接收数组中的两个元素，返回正，负，零以告诉排序算法谁大谁小或再者相同
 function qSortWith(ary, compare = (a, b) => a - b, start = 0, end = ary.length - 1) {
   if (start >= end) {
     return ary
   }
-
   var pivotIdx = Math.floor(Math.random() * (end - start + 1) + start)
   var pivot = ary[pivotIdx]
-
   swap(ary, pivotIdx, end)
-
   var i = start
-
   // 不遍历放在最后的哨兵元素
   for (var j = start; j < end; j++) {
     if (compare(ary[j], pivot) < 0) {
