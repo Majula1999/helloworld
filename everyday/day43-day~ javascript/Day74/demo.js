@@ -31,6 +31,7 @@ function treeToAry (tree, idx = 0) {
 }
 
 function condensedAryToTree (ary) {
+  var node = [];
   for (var i = 0; i < ary.length; i++) {
     var node = createTreeNode(ary[i]);
 

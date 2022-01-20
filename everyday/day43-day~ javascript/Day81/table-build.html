@@ -1,0 +1,301 @@
+<script>
+
+  function TextCell(text) {
+    this.lines = text.split('\n')
+  }
+
+  TextCell.prototype.minWidth = function() {
+    return Math.max(...this.lines.map(it => it.length))
+  }
+  TextCell.prototype.minHeight = function() {
+    return this.lines.length
+  }
+  TextCell.prototype.draw = function(width, height) {
+    var result = []
+    for (var i = 0; i < height; i++) {
+      var line = this.lines[i] || ''
+      result.push(line.padEnd(width, ' '))
+    }
+    return result
+  }
+
+  function RightTextCell(text) {
+    // this.lines = text.split('\n')
+    TextCell.call(this, text)
+  }
+
+  Object.setPrototypeOf(RightTextCell.prototype, TextCell.prototype)
+
+  RightTextCell.prototype.draw = function(width, height) {
+    var result = []
+    for (var i = 0; i < height; i++) {
+      var line = this.lines[i] || ''
+      result.push(line.padStart(width, ' '))
+    }
+    return result
+  }
+
+  function rowHeights(rows) {
+    return rows.map(row => {
+      return Math.max(...row.map(cell => cell.minHeight()))
+    })
+  }
+
+  function colWidths(rows) {
+    return rows[0].map((_, i) => {
+      // i为列标
+
+      // 拿到第i列的单元格们：行映射为行中的第i项
+      var col = rows.map(row => {
+        return row[i]
+      })
+      // 取出其宽度，返回最大值
+      return Math.max(...col.map(it => it.minWidth()))
+    })
+  }
+
+  function drawTable(rows) {
+    var heights = rowHeights(rows)
+    var widths = colWidths(rows)
+
+    function drawRow(row, 行标) {
+      // blocks是每个单元格的draw返回的字符串数组
+      var blocks = row.map((cell, 列标) => {
+        return cell.draw(widths[列标], heights[行标])
+      })
+
+      return blocks[0].map((line, idx) => {
+        return blocks.map(block => block[idx]).join(' ')
+      }).join('\n')
+    }
+
+    return rows.map(drawRow).join('\n')
+  }
+
+
+  // 下划线单元格，接收任意一个单元格做为参数
+  function UnderlinedCell(innerCell) {
+    this.inner = innerCell
+  }
+  UnderlinedCell.prototype.minWidth = function() {
+    return this.inner.minWidth()
+  }
+  UnderlinedCell.prototype.minHeight = function() {
+    return this.inner.minHeight() + 1
+  }
+  UnderlinedCell.prototype.draw = function(width, height) {
+    return this.inner.draw(width, height - 1).concat('-'.repeat(width))
+  }
+
+
+  var MOUNTAINS = [{
+      name: "Kilimanjaro",
+      height: 5895,
+      country: "Tanzania"
+  }, {
+      name: "Everest",
+      height: 8848,
+      country: "Nepal"
+  }, {
+      name: "Mount Fuji",
+      height: 3776,
+      country: "Japan"
+  }, {
+      name: "Mont Blanc",
+      height: 4808,
+      country: "Italy/France"
+  }, {
+      name: "Vaalserberg",
+      height: 323,
+      country: "Netherlands"
+  }, {
+      name: "Denali",
+      height: 6168,
+      country: "United States"
+  }, {
+      name: "Popocatepetl",
+      height: 5465,
+      country: "Mexico"
+  }];
+
+
+  var rows = [
+    [new TextCell('fosfwefo'), new TextCell('foo\nbarr'), new TextCell('bazzaaa')],
+    [new TextCell('foo\naaaaaa\nbbb'), new TextCell('fooc\nbarwef\nr\na'), new TextCell('bazz\naaa')],
+    [new TextCell('fosadfweo\naaaaaa\nbbb'), new TextCell('fowefoc\nbarra'), new TextCell('bazz\naaa')],
+    [new TextCell('foo\naaafwaaa\nbbb'), new TextCell('fooc\nbarwefra'), new TextCell('bazz\naaawfe')],
+  ]
+
+  rows = []
+
+  var headerRow = []
+  for (var prop in MOUNTAINS[0]) {
+    var cell = new UnderlinedCell(new TextCell(prop))
+    headerRow.push(cell)
+  }
+  rows.push(headerRow)
+
+  MOUNTAINS.forEach(mount => {
+    var row = []
+    for (var key in mount) {
+      var val = mount[key]
+      if (typeof val == 'number') {
+        row.push(new RightTextCell('' + val))
+      } else {
+        row.push(new TextCell('' + val))
+      }
+    }
+    rows.push(row)
+  })
+
+
+
+  // function f(x) {
+
+  // }
+
+
+  // function Creature(canMove, shu, ke, zhong) {
+  //   this.canMove = canMove
+  //   this.shu = shu
+  //   this.ke = ke
+  //   this.zhong = zhong
+  // }
+
+  // function People(gender, name) {
+  //   Creature.call(this, true, '人', '人', '人')
+  //   this.gender = gender
+  //   this.name = name
+  // }
+
+  // Object.setPrototypeOf(People.prototype, Creature.prototype)
+
+  // People.prototype.work = function() {
+
+  // }
+
+  // var a = 2
+  // var b = 'owijfewef'
+  // var isGood = true
+
+
+  // var zhangshan = {
+  //   age: 2,
+  //   duzhi: 3,
+  //   name: 'owijfewef',
+  //   isGood: true,
+  //   eat: function(amount) {
+  //     this.duzhi += amount
+  //   }
+  // }
+
+  // var lishi = {
+  //   age: 5,
+  //   duzhi: 5,
+  //   name: 'lishi',
+  //   isGood: false,
+  //   eat: function(amount) {
+  //     this.duzhi += amount
+  //   }
+  // }
+
+
+  // var win1 = {
+  //   width: 600,
+  //   height: 800,
+  //   top: 20,
+  //   left: 100,
+  //   move: function(x, y) {
+  //     this.top = y
+  //     this.left = x
+  //   },
+  //   resize: function(w, h) {
+  //     this.width = w
+  //     this.height = h
+  //   },
+  // }
+
+
+  // var l = null
+
+  // l_insert(l, idx, 8)
+  // l_append(l, 9)
+  // l_prepend(l, 1)
+  // l_reverse(l)
+  // l_nth(l, 5)
+
+
+  // list = {
+  //   head: null,
+  //   insert: function() {},
+  //   append: function() {},
+  //   prepend: function() {},
+  //   reverse: function() {},
+  //   nth: function() {},
+  // }
+
+  // list.insert(5, 8)
+
+  // list.append(6)
+
+  // append(list, 6)
+
+  function Vector(x, y) {
+    this.x = x
+    this.y = y
+  }
+  Vector.prototype.plus = function(v) {
+    var x = this.x + v.x
+    var y = this.y + v.y
+    return new Vector(x, y)
+  }
+  Vector.prototype.minus = function(v) {
+    var x = this.x - v.x
+    var y = this.y - v.y
+    return new Vector(x, y)
+  }
+  Vector.prototype.getLength = function() {
+    return Math.sqrt(this.x * this.x + this.y * this.y)
+  }
+
+
+
+</script>
+
+
+function Vector(x, y) {
+
+}
+
+Vector.prototype.plus = function(){}
+Vector.prototype.minus = function(){}
+
+var a = new Vector(3, 5)
+var b = new Vector(5, -2)
+var c = a.plus(b)
+var d = a.minus(b)
+
+
+function Complex(real, imag) {
+
+}
+
+Complex.prototype.plus
+Complex.prototype.minus
+Complex.prototype.mul
+Complex.prototype.div
+
+var a = new Complex(3, 5) // 3 + 5i
+var b = new Complex(5, -2) // 5 - 2i
+
+var c = a.plus(b) // 8 + 3i
+var d = a.mul(b) // 25 + 19i
+d.real == 25
+d.imag == 19
+
+var e = a.div(b)
+
+
+function Real(up, down) {
+
+}
