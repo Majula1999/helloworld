@@ -1,0 +1,73 @@
+<script>
+
+  function MySet(initial = []) {
+    this._elements = []
+
+    initial.forEach(it => {
+      this.add(it)
+    })
+  }
+
+  MySet.prototype.add = function(val) {
+    if (!this.has(val)) {
+      this._elements.push(val)
+    }
+    return this
+  }
+  MySet.prototype.delete = function(val) {
+    var idx = this._elements.indexOf(val)
+    if (idx >= 0) {
+      this._elements.splice(idx, 1)
+    }
+    return this
+  }
+  MySet.prototype.clear = function(val) {
+    this._elements = []
+    return this
+  }
+  MySet.prototype.has = function(val) {
+    return this._elements.includes(val)
+  }
+  Object.defineProperty(MySet.prototype, 'size', {
+    get: function() {
+      return this._elements.length
+    }
+  })
+
+
+
+  function Stack(initials = []) {
+    this._head = null
+    this._size = 0
+    initials.forEach(it => {
+      this.push(it)
+    })
+  }
+  Stack.prototype.push = function(val) {
+    var node = {
+      val: val,
+      next: this._head
+    }
+    this._head = node
+    this._size++
+    return this
+  }
+  Stack.prototype.pop = function() {
+    if (this._head) {
+      var val = this._head.val
+      this._head = this._head.next
+      this._size--
+      return val
+    }
+  }
+  Stack.prototype.peek = function() {
+    if (this._head) {
+      return this._head.val
+    }
+  }
+  Object.defineProperty(Stack.prototype, 'size', {
+    get: function() {
+      return this._size
+    }
+  })
+</script>
